@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version     = ModelStack::Generator::Rails::VERSION
   s.authors     = ["Christoph Pageler"]
   s.email       = 'christoph.pageler@me.com'
-  s.summary     = "Code generator for ModelStack"
-  s.description = "ModelStack Generator for Rails Applications"
+  s.summary     = 'Code generator for ModelStack'
+  s.description = 'ModelStack Generator for Rails Applications'
   s.homepage    = 'http://christophpageler.de'
   s.license     = 'MIT'
 
