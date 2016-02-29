@@ -1,0 +1,9 @@
+model :group do
+  name 'Group'
+  description 'Group Model'
+
+  default_attributes
+  default_primary_key
+
+  attribute :name,  type: :string, nullable: false
+end

@@ -1,0 +1,10 @@
+model :user do
+  name 'User'
+  description 'User Model'
+
+  default_attributes
+  default_primary_key
+
+  attribute :name,  type: :string,  nullable: false
+  attribute :age,   type: :integer, nullable: true
+end

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+puts `gem build ModelStackRailsGenerator.gemspec`   # build the gem
+gem_name = `ls modelstack-generator-rails*.gem`     # get gem name
+puts `gem install #{gem_name}`                      # install the gem
+puts `rm #{gem_name}`                               # remove gem file
+
+# test modelkit
+puts `cd example && modelstack`

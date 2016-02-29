@@ -1,0 +1,12 @@
+scope path: 'api' do
+
+  resources :users do
+    action :search, http_method: :get, on: :collection
+    resources :sessions, only: :index
+  end
+
+  controller :users, model: :user do
+    action :me
+  end
+
+end

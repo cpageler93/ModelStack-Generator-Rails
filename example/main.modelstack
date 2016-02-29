@@ -1,0 +1,18 @@
+require 'modelstack-generator-rails'
+
+name 'ModelStack Example API'
+
+default_attributes do
+  attribute :id,          type: :integer,   nullable: false
+  attribute :created_at,  type: :datetime,  nullable: false
+  attribute :updated_at,  type: :datetime,  nullable: true
+end
+
+default_primary_key :id
+
+read_file 'user.modelstack'
+read_file 'group.modelstack'
+read_file 'routes.modelstack'
+
+
+generate 'Rails'

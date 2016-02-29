@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+# test modelkit
+puts `cd example && modelstack --debug`
