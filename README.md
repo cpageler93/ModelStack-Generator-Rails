@@ -1,0 +1,1 @@
+# ModelStack-Rails-Generator
