@@ -15,4 +15,6 @@ read_file 'group.modelstack'
 read_file 'routes.modelstack'
 
 
-generate 'Rails'
+generate 'Rails' do
+  # output_to 'generated/rails'
+end
