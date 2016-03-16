@@ -5,9 +5,7 @@ module ModelStack
     class Rails
       include ModelStack::Generator::Base
 
-
       attr_accessor :rails_dir
-
 
       ############################
       ##      BASE METHODS      ##
@@ -17,7 +15,23 @@ module ModelStack
         # puts "handle options #{options}"
       end
 
-      def generate(data_model)
+      def number_of_steps
+        return 20
+      end
+
+      def generate
+        (1..number_of_steps).each do |i|
+          update_user_info({
+            :step => i,
+            :message => "message #{i}"
+          })
+          sleep(0.1)
+        end
+
+        return
+
+        # create output folder
+        create_output_folder
 
         # get rails name
         rails_app_name = get_rails_app_name(data_model[:name])
