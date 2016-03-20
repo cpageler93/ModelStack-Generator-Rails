@@ -6,7 +6,7 @@ gem install $gem_name                               # install the gem
 rm $gem_name                                        # remove gem file
 
 # empty output directory
-# puts `rm -Rf example/generated/rails`
+rm -Rf example/generated/rails
 
 # test modelkit
 cd example && modelstack

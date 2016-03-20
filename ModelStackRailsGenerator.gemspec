@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://christophpageler.de'
   s.license     = 'MIT'
 
-  s.files       =  Dir["lib/**/*"] + %w( README.md LICENSE )
+  s.files       =  Dir["lib/**/*"] + Dir["template/**/*"] + %w( README.md LICENSE )
 
   s.require_paths = ["lib"]
 
