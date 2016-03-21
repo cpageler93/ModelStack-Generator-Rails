@@ -1,0 +1,13 @@
+#!/bin/bash
+
+gem build ModelStackRailsGenerator.gemspec          # build the gem
+gem_name=`ls modelstack-generator-rails*.gem`       # get gem name
+gem install $gem_name --ignore-dependencies                              # install the gem
+rm $gem_name                                        # remove gem file
+
+# empty output directory
+rm -Rf example/generated/rails
+
+# test modelkit
+cd example && modelstack
+cd ..

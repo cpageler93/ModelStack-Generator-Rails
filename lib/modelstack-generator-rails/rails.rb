@@ -22,28 +22,6 @@ module ModelStack
         return 3
       end
 
-      def deep_hash(obj)
-        if obj.is_a?(Array)
-          new_array = []
-          obj.each do |value|
-            new_array << deep_hash(value)
-          end
-          return new_array
-        elsif obj.is_a?(Hash)
-          new_hash = {}
-          obj.each do |key, value|
-            new_hash[key] = deep_hash(value)
-          end
-          return new_hash
-        else
-          if obj.respond_to?(:as_json)
-            return obj.as_json
-          else
-            return obj
-          end
-        end
-      end
-
       def generate
 
         app_name = data_model[:name]
@@ -57,15 +35,6 @@ module ModelStack
         ##########################
         # START GENERATION
 
-
-        # TODO: Extract to base class
-        spec = Gem::Specification.find_by_name("modelstack-generator-rails")
-        gem_root = spec.gem_dir
-
-        log_message deep_hash(data_model).to_json
-        return
-
-
         # Step 1: create output folder
         Proc.new {
           inc_step
@@ -76,7 +45,7 @@ module ModelStack
         }.call
 
         # Step 2: Copy Template to destination
-        template_dir = File.join(gem_root, "template")
+        template_dir = File.join(self.absolute_gem_path, "template")
         Proc.new {
           inc_step
           update_title "copy template"

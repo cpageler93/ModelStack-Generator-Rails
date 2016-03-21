@@ -2,9 +2,10 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'modelstack-generator-rails/version.rb'
+require 'modelstack-generator-rails/name.rb'
 
 Gem::Specification.new do |s|
-  s.name        = 'modelstack-generator-rails'
+  s.name        = ModelStack::Generator::Rails::NAME
   s.version     = ModelStack::Generator::Rails::VERSION
   s.authors     = ["Christoph Pageler"]
   s.email       = 'christoph.pageler@me.com'
